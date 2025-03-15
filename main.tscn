@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqh456at8pauq"]
+
+[ext_resource type="Script" uid="uid://bnowowbyts68p" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b57djrcy2wrd4" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://2jt87jwhstfr" path="res://pipe_pair.tscn" id="3_h2yge"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0xm2m")
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(240, 360)
+
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+
+[node name="PipePair" parent="." instance=ExtResource("3_h2yge")]

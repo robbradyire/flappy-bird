@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://2jt87jwhstfr"]
+
+[ext_resource type="Script" uid="uid://b2cxh2va318tn" path="res://pipe_pair.gd" id="1_bmsf8"]
+[ext_resource type="PackedScene" uid="uid://65wc2kakfs06" path="res://pipe.tscn" id="1_nep78"]
+
+[sub_resource type="Curve2D" id="Curve2D_bmsf8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 576, 128, 0, 0, 0, 0, 576, 640)
+}
+point_count = 2
+
+[node name="PipePair" type="Node"]
+script = ExtResource("1_bmsf8")
+
+[node name="Bottom" parent="." instance=ExtResource("1_nep78")]
+position = Vector2(0, 200)
+
+[node name="Top" parent="." instance=ExtResource("1_nep78")]
+position = Vector2(0, 100)
+rotation = 3.14159
+
+[node name="TubePath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_bmsf8")
+
+[node name="TubeSpawnLocation" type="PathFollow2D" parent="TubePath"]
+position = Vector2(576, 128)
+rotation = 1.5708

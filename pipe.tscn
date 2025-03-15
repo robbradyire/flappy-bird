@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://65wc2kakfs06"]
+
+[ext_resource type="Texture2D" uid="uid://ciqlsrmhd3t5q" path="res://assets/art/pipe-top.png" id="1_78010"]
+[ext_resource type="Texture2D" uid="uid://0sgd4t1u7w6t" path="res://assets/art/pipe.png" id="2_arayy"]
+
+[node name="Pipe" type="Area2D"]
+metadata/_edit_group_ = true
+
+[node name="End" type="Sprite2D" parent="."]
+position = Vector2(0, 40)
+texture = ExtResource("1_78010")
+
+[node name="Tube" type="Sprite2D" parent="."]
+position = Vector2(0, 400)
+scale = Vector2(1, 15.6585)
+texture = ExtResource("2_arayy")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-20, 6.05624)
+scale = Vector2(1, 1.00987)
+polygon = PackedVector2Array(51, -5.00684, -11, -5.00684, -11, 22.7195, -7, 22.7195, -7, 707.957, 47, 707.957, 47, 22.7195, 51, 22.7195)
