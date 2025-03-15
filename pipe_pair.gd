@@ -1,7 +1,7 @@
 extends Node
 
 @export var speed := 100
-@export var gap := 100
+@export var gap := 150
 var half_gap := gap / 2
 
 func _ready() -> void:
@@ -16,3 +16,9 @@ func _process(delta: float) -> void:
 func getPipeMidpoint() -> Vector2:
 	$TubePath/TubeSpawnLocation.progress_ratio = randf()
 	return $TubePath/TubeSpawnLocation.position
+
+func _on_top_exited_screen() -> void:
+	queue_free()
+
+func _on_bottom_exited_screen() -> void:
+	queue_free()

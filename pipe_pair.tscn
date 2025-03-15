@@ -25,3 +25,6 @@ curve = SubResource("Curve2D_bmsf8")
 [node name="TubeSpawnLocation" type="PathFollow2D" parent="TubePath"]
 position = Vector2(576, 128)
 rotation = 1.5708
+
+[connection signal="exited_screen" from="Bottom" to="." method="_on_bottom_exited_screen"]
+[connection signal="exited_screen" from="Top" to="." method="_on_top_exited_screen"]
