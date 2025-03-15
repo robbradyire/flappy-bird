@@ -6,10 +6,15 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0xm2m")
+pipes_scene = ExtResource("3_h2yge")
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(240, 360)
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 
-[node name="PipePair" parent="." instance=ExtResource("3_h2yge")]
+[node name="PipeTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]

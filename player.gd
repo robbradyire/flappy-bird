@@ -15,3 +15,8 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("flap"):
 		velocity = flap_strength
+
+
+func _on_area_entered(area: Area2D) -> void:
+	$AnimatedSprite2D.animation = "hit"
+	print("Entered!")

@@ -9,7 +9,10 @@ _data = {
 }
 point_count = 2
 
-[node name="PipePair" type="Node"]
+[node name="PipePair" type="RigidBody2D" groups=["pipes"]]
+editor_description = "had to change this from Node to rigid body to spawn things idk what I'm doing"
+z_index = -1
+gravity_scale = 0.0
 script = ExtResource("1_bmsf8")
 
 [node name="Bottom" parent="." instance=ExtResource("1_nep78")]
@@ -17,7 +20,7 @@ position = Vector2(0, 200)
 
 [node name="Top" parent="." instance=ExtResource("1_nep78")]
 position = Vector2(0, 100)
-rotation = 3.14159
+rotation = -3.14159
 
 [node name="TubePath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_bmsf8")
